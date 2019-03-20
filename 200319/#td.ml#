@@ -1,0 +1,50 @@
+(*Ex 8*)
+let test s=
+    let n=string_length s and ch=s in
+    	for i=0 to n-1 do
+	    ch.[i] <- s.[n-i-1] done ;;
+(*Ex 9.1*)
+let rec somme f n = 
+    match n with 
+    	  |0 -> f(0)
+	  |n -> f(n) + somme f (n-1);;
+
+(*Recursive Terminale*)
+let sommeterm n s =
+    match n with
+    	  |0 -> 
+	  |n -> sommeterm f (n-1)
+
+
+
+(*Ex 10*)
+let rec ecriture m n =
+    match (m,n) with 
+    |(1,n) -> 1
+    |(m,n) when m > n -> 0
+    |_ -> (ecriture (m-1) (n-1)) + (ecriture m (n-m));;
+    
+
+
+
+(*Ex 9.2*)
+let rec catalan n =
+    match n with 
+    	  |1 -> 1
+	  |0 -> 1
+	  | let s = ref 0 in
+	    for k=0 to (n-1) do
+	    	s := !s+(catalan k) + catalan (n-1-k)
+	    done;
+	  !s;;
+
+(*Ex 13*)
+let rec iter f n x =
+    match n with 
+    	  |0 -> x
+	  |n -> (iter ( n-1) f x);;
+
+
+(*Ex 18*)
+let addpoly p1 p2 = 
+    let a = Array.make(max(p1,p2);;
